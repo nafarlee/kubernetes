@@ -1,0 +1,32 @@
+---
+kind: ClusterIssuer
+apiVersion: cert-manager.io/v1
+metadata:
+  name: lets-encrypt
+spec:
+  acme:
+    email: nicholasafarley@gmail.com
+    profile: tlsserver
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: lets-encrypt-account-key
+    solvers:
+      - http01:
+          ingress:
+            ingressClassName: nginx
+---
+kind: ClusterIssuer
+apiVersion: cert-manager.io/v1
+metadata:
+  name: lets-encrypt-staging
+spec:
+  acme:
+    email: nicholasafarley@gmail.com
+    profile: tlsserver
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: lets-encrypt-staging-account-key
+    solvers:
+      - http01:
+          ingress:
+            ingressClassName: nginx
