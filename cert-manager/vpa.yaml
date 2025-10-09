@@ -1,0 +1,39 @@
+---
+kind: VerticalPodAutoscaler
+apiVersion: autoscaling.k8s.io/v1
+metadata:
+  name: cert-manager
+  namespace: cert-manager
+spec:
+  targetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: cert-manager
+  updatePolicy:
+    updateMode: Auto
+---
+kind: VerticalPodAutoscaler
+apiVersion: autoscaling.k8s.io/v1
+metadata:
+  name: cert-manager-cainjector
+  namespace: cert-manager
+spec:
+  targetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: cert-manager-cainjector
+  updatePolicy:
+    updateMode: Auto
+---
+kind: VerticalPodAutoscaler
+apiVersion: autoscaling.k8s.io/v1
+metadata:
+  name: cert-manager-webhook
+  namespace: cert-manager
+spec:
+  targetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: cert-manager-webhook
+  updatePolicy:
+    updateMode: Auto
