@@ -1,5 +1,6 @@
 controller:
   kind: DaemonSet
+  dnsPolicy: ClusterFirstWithHostNet
   hostPort:
     enabled: true
   service:
