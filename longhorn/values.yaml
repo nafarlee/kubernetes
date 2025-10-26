@@ -1,0 +1,9 @@
+defaultSettings:
+  defaultReplicaCount: "1"
+longhornUI:
+  replicas: "1"
+csi:
+  attacherReplicaCount: "1"
+  provisionerReplicaCount: "1"
+  resizerReplicaCount: "1"
+  snapshotterReplicaCount: "1"
